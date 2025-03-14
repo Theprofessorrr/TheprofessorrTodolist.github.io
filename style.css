@@ -59,13 +59,18 @@ li{
     display: flex;
     flex-direction: column;
     padding: 20.8px;
+    
 }
 #todoList p{
     color: rgb(243, 234, 210);
 }
+#todoList{
+    padding-top: 20px;
+    text-align: center;
+}
 .disabled{
     display: flex;
-    text-decoration: line-through rgb(196, 171, 196);
+    text-decoration: line-through rgb(34, 21, 61);
 
 }
 input[type="checkbox"]::before{
@@ -97,6 +102,9 @@ input[type="text"]{
     height: 32px;
     display: flex;
     justify-content: space-between;
+    display: flex;
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 10px; /* Espacement entre la checkbox et le texte */
 }
 .counter-container p{
     align-self: center;
@@ -150,10 +158,12 @@ input[type="checkbox"] {
     border: 2px solid #555;
     border-radius: 4px;
     cursor: pointer;
-    background-color: white;
+    background-color: rgb(172, 32, 32);
 
 }
-
-
-
-
+.todo-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: rgb(24, 51, 70); /* Couleur de la checkbox cochée */
+}
