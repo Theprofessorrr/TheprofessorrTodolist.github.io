@@ -1,0 +1,159 @@
+body{
+    background-color: aquamarine;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.btn{
+    color: rgb(211, 132, 169);
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(24, 51, 70);
+    right: 8px;
+    bottom: 8px;
+    cursor: pointer;
+}
+.todo{
+    background-color: rgb(33, 183, 183);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 2rem;
+    padding: 40px;
+    height: 50%;
+    width: 30%;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 480px;
+}
+h2{
+    
+    text-align: center;
+    color: rgb(232, 240, 247);
+}
+.input{
+    position: relative;
+    display: flex;
+}
+.input-field{
+    width: 100%;
+    border: 0.06rem solid rgb(180, 169, 169);
+    padding: 20px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+.todo-container {
+    display: flex;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+
+}
+li{
+    display: flex;
+    flex-direction: column;
+    padding: 20.8px;
+}
+#todoList p{
+    color: rgb(243, 234, 210);
+}
+.disabled{
+    display: flex;
+    text-decoration: line-through rgb(196, 171, 196);
+
+}
+input[type="checkbox"]::before{
+
+    content: "\2713";
+    display: inline-block;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    font-size: 27.2px;
+    color: transparent;
+
+
+}
+
+input[type="text"]{
+    color: rgb(65, 83, 98);
+}
+
+
+
+
+.counter{
+    border: .96px solid rgb(84, 70, 70);
+
+}
+
+.counter-container{
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+.counter-container p{
+    align-self: center;
+}
+.counter-container button{
+    color: rgb(109, 115, 106);
+    font-size: 20px;
+    border: none;
+    background-color: transparent;
+}
+.footer{
+    display: flex;
+    gap: 28.8px;
+    background-color: rgb(33, 183, 183);
+    border-radius: 8px;
+    padding: 19.2px;
+}
+.made-by, .author{
+    font-size: 14.4px;
+}
+.made-by{
+    color: rgb(216, 203, 203);
+}
+.author{
+    color:rgb(24, 51, 70) ;
+    font-weight: bold;
+}
+.scroll{
+    scrollbar-width: thin;
+    height: 240px;
+
+}
+.scroll::-webkit-scrollbar{
+    width: 9.6px;
+}
+.scroll::-webkit-scrollbar-thumb{
+    width: 9.6px;
+    background-color: aquamarine;
+    border-radius: 8px;
+}
+.scroll::-webkit-scrollbar-track{
+    display: none;
+}
+.delete-btn{
+    background-color: transparent;
+    border: none;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+
+}
+
+
+
+
