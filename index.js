@@ -23,7 +23,7 @@ function addTask() {
     if (newTask !== "") {
         todo.push({
             text: newTask,
-            completed: false,  // Remplacement de "disabled" par "completed"
+            completed: false,  
         });
         saveToLocalStorage();
         todoInput.value = "";
@@ -32,11 +32,25 @@ function addTask() {
 }
 
 function deleteAllTasks() {
-    todo = [];
-    index2=0;
-    saveToLocalStorage();
-    displayTask();
-}
+    Swal.fire({
+        title: "Are you sure ?",
+        text:"All items will be deleted permanently",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#0E3252FF",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete them!",
+        cancelButtonText: "Cancel"
+    }).then((result)=>{
+        if(result.isConfirmed){
+        todo = [];
+        saveToLocalStorage();
+        displayTask();
+        Swal.fire("Deleted!", "All Your tasks have been removed.", "success");
+        }
+    }
+    
+);}
 
 function displayTask() {
     todoList.innerHTML = "";
@@ -66,13 +80,30 @@ function saveToLocalStorage() {
 }
 
 function deleteTask(index) {
-    todo.splice(index, 1);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This task will be permanently deleted!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#0E3252FF",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        todo.splice(index, 1);
+        saveToLocalStorage();
+        displayTask();
+        Swal.fire("Deleted!", "Your task has been removed.", "success");
+      }
+    });
+  }
+
+
+
+function toggleTask(index) {
+    todo[index].completed = !todo[index].completed; 
     saveToLocalStorage();
     displayTask();
 }
 
-function toggleTask(index) {
-    todo[index].completed = !todo[index].completed; // Permet de cocher/décocher
-    saveToLocalStorage();
-    displayTask();
-}
